@@ -357,5 +357,5 @@ function exit() {
 
   updateCookie('isLoggedIn', 'false');
   
-  window.location.href = "index.html";
+  window.location.href = "../index.html";
 }
