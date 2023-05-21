@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='../css/test_page.css'>
+    <link rel='stylesheet' href='../css/menu.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Подготовка к экзаменам</title>
+</head>
+<body onload="NextQuestion(0)">
+    <div class='container'>
+        <div class='header'>
+            <div class='header-logo'>
+                <img src="../src/img/logo.png">
+            </div>
+            <div class='nav'>
+                <a class='nav-item' href="../index.html">Главная</a>
+                <a class='nav-item' href="rus.html">Русский язык</a>
+                <a class='nav-item' href="litra.html">Литература</a>
+                <a class='nav-item' href="feedback.html">Связь с нами</a>
+                <a class='nav-item' href="auth.html">Войти</a>
+            </div>
+            <div class='phone'>
+                <div class='phone-text'>
+                    Информационный портал <br> для подготовки к экзаменам <br> по русскому языку и литературе
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- creating a modal for when quiz ends -->
+        <div class="modal-container" id="score-modal">
+
+            <div class="modal-content-container">
+
+                <h1>Тест выполнен.</h1>
+
+                <div class="grade-details">
+                    <p>Кол-во вопросов : 10</p>
+                    <p>Неправильные ответы : <span id="wrong-answers"></span></p>
+                    <p>Оценка : <span id="score"></span></p>
+                    <p>Процент выполнения : <span id="grade-percentage"></span>%</p>
+                    <p ><span id="remarks"></span></p>
+                </div>
+
+                <div class="modal-button-container">
+                    <button onclick="closeScoreModal()">Продолжить</button>
+                </div>
+
+            </div>
+        </div>
+        <div id="game-quiz-container" class="game-quiz-container">
+
+            <div class="game-details-container">
+                <h1>Очки : <span id="player-score"></span> / 10</h1>
+                <h1> Вопросы : <span id="question-number"></span> / 10</h1>
+            </div>
+
+            <div class="game-question-container">
+                <h1 id="display-question"></h1>
+            </div>
+
+            <div class="game-options-container">
+
+               <div class="modal-container" id="option-modal">
+
+                    <div class="modal-content-container">
+                         <h1>Нужно выбрать ответ</h1>
+
+                         <div class="modal-button-container">
+                            <button onclick="closeOptionModal()">Продолжить</button>
+                        </div>
+
+                    </div>
+
+               </div>
+
+                <span>
+                    <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+                    <label for="option-one" class="option" id="option-one-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+                    <label for="option-two" class="option" id="option-two-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+                    <label for="option-three" class="option" id="option-three-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+                    <label for="option-four" class="option" id="option-four-label"></label>
+                </span>
+
+
+            </div>
+
+            <div class="next-button-container">
+                <button onclick="handleNextQuestion()">Далее</button>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../js/login_state.js"></script>
+    <script src="../js/test.js"></script>
+</body>
+</html>                 

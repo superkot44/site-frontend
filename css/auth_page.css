@@ -1,0 +1,113 @@
+/*=======================ОБЩИЕ СТИЛИ=======================*/
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #FF7400;
+    color: #fff;
+}
+
+button[type="submit"]:hover {
+    background-color: #894b17;
+}
+/*=======================ОБЩИЕ СТИЛИ=======================*/
+
+
+
+/*=======================КОНТЕЙНЕРЫ=======================*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth {
+    display: none;    
+    max-width: 30%;
+}
+/*=======================КОНТЕЙНЕРЫ=======================*/
+
+
+
+/*=======================ФОРМЫ=======================*/
+.form-group {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.registration-form {
+    display: none;
+}
+
+.login-form {
+    display: none;
+}
+
+.registration-form__link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #FF7400;
+    cursor: pointer;
+}
+
+.login-form__link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #FF7400;
+    cursor: pointer;
+}
+/*=======================ФОРМЫ=======================*/
+
+
+
+/*=======================СПЕЦ КЛАССЫ=======================*/
+.auth.show {
+    display: block;
+}
+
+.login-form.show {
+    display: block;
+}
+
+.registration-form.show {
+    display: block;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.custom-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+/*=======================СПЕЦ КЛАССЫ=======================*/

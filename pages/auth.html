@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='../css/auth_page.css'>
+    <link rel='stylesheet' href='../css/menu.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Подготовка к экзаменам</title>
+</head>
+<body>
+    <div class="container">
+        <div class='header'>
+            <div class='header-logo'>
+                <img src="../src/img/logo.png">
+            </div>
+            <div class='nav'>
+                <a class='nav-item' href="../index.html">Главная</a>
+                <a class='nav-item' href="rus.html">Русский язык</a>
+                <a class='nav-item' href="litra.html">Литература</a>
+                <a class='nav-item' href="feedback.html">Связь с нами</a>
+                <a class='nav-item' href="auth.html">Войти</a>
+            </div>
+            <div class='phone'>
+                <div class='phone-text'>
+                    Информационный портал <br> для подготовки к экзаменам <br> по русскому языку и литературе
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="auth show">
+                <form class="login-form show" id="login-form">
+                    <h1>Авторизация</h1>
+                    <div class="form-group">
+                        <label for="username">Почта:</label>
+                        <input type="text" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit">Войти</button>
+                    <a class="registration-form__link">Регистрация</a>
+                </form>
+                <form class="registration-form" id="registration-form">
+                    <h1>Регистрация</h1>
+                    <div class="form-group">
+                        <label for="r-username">Имя пользователя:</label>
+                        <input type="text" id="r-username" name="r-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="r-email">Почта:</label>
+                        <input type="text" id="r-email" name="r-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="r-password">Пароль:</label>
+                        <input type="password" id="r-password" name="r-password" required>
+                    </div>
+                    <button type="submit">Зарегистрироваться</button>
+                    <a class="login-form__link">Уже есть аккаунт?</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/auth.js"></script>
+    <script src="../js/login_state.js"></script>
+</body>
+</html>                 
