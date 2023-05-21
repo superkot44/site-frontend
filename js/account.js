@@ -257,10 +257,10 @@ function saveData() {
 	let newPassword = document.getElementById('new-password').value;
 	let confirmPassword = document.getElementById('confirm-password').value;
 
-  console.log(email);
+  	console.log(email);
 
 	let result = {
-    _id: getCookie('_id'),
+    		_id: getCookie('_id'),
 		username: username,
 		email: email,
 		password: newPassword,
