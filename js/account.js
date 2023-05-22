@@ -11,12 +11,12 @@ function getCookie(name) {
   return cookieValue ? cookieValue.pop() : '';
 }
 
-function deleteCookie(name) {   
-  document.cookie = name+'=; Max-Age=-99999999;';  
+function deleteCookie(name) {
+  document.cookie = `${name}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
 }
 
 function updateCookie(cookieName, newValue) {
-  document.cookie = cookieName + "=" + newValue + "; path=/pages;";
+  document.cookie = cookieName + "=" + newValue + "; path=/;";
 }
 
 
@@ -257,14 +257,14 @@ function saveData() {
 	let newPassword = document.getElementById('new-password').value;
 	let confirmPassword = document.getElementById('confirm-password').value;
 
-  	console.log(email);
+  let results = JSON.parse(getCookie('results'));
 
 	let result = {
-    		_id: getCookie('_id'),
-		username: username,
-		email: email,
-		password: newPassword,
-		results: getCookie('results')
+    _id: getCookie('_id'),
+    username: username,
+    email: email,
+    password: newPassword,
+    results: results
 	}
 
 	if (username == getCookie('username')) {

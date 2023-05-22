@@ -79,12 +79,12 @@ loginForm.addEventListener('submit', (event) => {
           
           response.json().then(userData => {
             // Добавление данных пользователя в cookie
-            document.cookie = `isLoggedIn=true;`;
-            document.cookie = `_id=${userData._id};`;
-            document.cookie = `username=${userData.username};`;
-            document.cookie = `email=${userData.email};`;
-            document.cookie = `password=${userData.password};`;
-            document.cookie = `results=${JSON.stringify(userData.results)};`;
+            document.cookie = `isLoggedIn=true; path=/;`;
+            document.cookie = `_id=${userData._id}; path=/;`;
+            document.cookie = `username=${userData.username}; path=/;`;
+            document.cookie = `email=${userData.email}; path=/;`;
+            document.cookie = `password=${userData.password}; path=/;`;
+            document.cookie = `results=${JSON.stringify(userData.results)}; path=/;`;
       
             // Перенаправление на другую страницу
             window.location.href = 'account.html';
@@ -117,26 +117,26 @@ registrationForm.addEventListener('submit', (event) => {
     })
     .then(response => {
         if (response.ok) {
-            // Регистрация прошла успешно
-            // Получение данных пользователя из ответа
+          // Регистрация прошла успешно
+          // Получение данных пользователя из ответа
 
-            response.json().then(userData => {
-				// Добавление данных пользователя в cookie
-				document.cookie = `isLoggedIn=true;`;
-        document.cookie = `_id=${userData._id};`;
-				document.cookie = `username=${userData.username};`;
-				document.cookie = `email=${userData.email};`;
-				document.cookie = `password=${userData.password};`;
-				document.cookie = `results=${JSON.stringify(userData.results)};`;
-			
-				// Перенаправление на другую страницу
-				window.location.href = 'account.html';
-            });            
+          response.json().then(userData => {
+            // Добавление данных пользователя в cookie
+            document.cookie = `isLoggedIn=true; path=/;`;
+            document.cookie = `_id=${userData._id}; path=/;`;
+            document.cookie = `username=${userData.username}; path=/;`;
+            document.cookie = `email=${userData.email}; path=/;`;
+            document.cookie = `password=${userData.password}; path=/;`;
+            document.cookie = `results=${JSON.stringify(userData.results)}; path=/;`;
+          
+            // Перенаправление на другую страницу
+            window.location.href = 'account.html';
+          });            
 
         } else if (response.status === 409) {
         	throw new Error('Пользователь с таким именем уже существует');
         } else {
-            throw new Error('Ошибка при регистрации');
+          throw new Error('Ошибка при регистрации');
         }
     })
     .catch(error => {

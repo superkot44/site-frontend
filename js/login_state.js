@@ -5,13 +5,22 @@ function getCookie(name) {
 
 var isLoggedIn = getCookie('isLoggedIn');
 
+console.log('Login:', isLoggedIn);
+
 document.addEventListener('DOMContentLoaded', function() {
-    var accountLink = document.querySelectorAll('[href="auth.html"]');
+    const url = new URL(window.location.href);
+    const path = url.pathname;
+
+    if (path.endsWith('/index.html')) {
+        var accountLink = document.querySelectorAll('[href="pages/auth.html"]');
+    } else {
+        var accountLink = document.querySelectorAll('[href="auth.html"]');
+    }
 
     accountLink.forEach(function(link) {
         if (isLoggedIn == 'true') {
             link.innerHTML = "Кабинет";
-            if (window.location.href == "https://superkot44.github.io/site-frontend/index.html" || window.location.href == 'index.html') {
+            if (path == '/index.html') {
                 link.href = "pages/account.html";
             }
             else {
@@ -19,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         } else {
             link.innerHTML = "Войти";
-            if (window.location.href == "https://superkot44.github.io/site-frontend/index.html" || window.location.href == 'index.html') {
+            if (path == '/index.html') {
                 link.href = "pages/auth.html";
             }
             else {
@@ -45,11 +54,12 @@ async function load() {
             if (response.ok) {
                 const userData = await response.json();
                 console.log(userData);
-                document.cookie = `_id=${userData._id}`;
-                document.cookie = `username=${userData.username}`;
-                document.cookie = `email=${userData.email}`;
-                document.cookie = `password=${userData.password}`;
-                document.cookie = `results=${JSON.stringify(userData.results)}`;
+                document.cookie = `isLoggedIn=true; path=/;`;
+                document.cookie = `_id=${userData._id}; path=/;`;
+                document.cookie = `username=${userData.username}; path=/;`;
+                document.cookie = `email=${userData.email}; path=/;`;
+                document.cookie = `password=${userData.password}; path=/;`;
+                document.cookie = `results=${JSON.stringify(userData.results)}; path=/;`;
             } else if (response.status === 409) {
                 throw new Error('Пользователь с таким именем уже существует');
             } else {

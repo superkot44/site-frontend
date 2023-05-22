@@ -635,7 +635,7 @@ function getCookie(name) {
 }
 
 function updateCookie(cookieName, newValue) {
-    document.cookie = cookieName + "=" + newValue + "; path=/pages;";
+    document.cookie = cookieName + "=" + newValue + "; path=/;";
 }
 
 let shuffledQuestions = []
