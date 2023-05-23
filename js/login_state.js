@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             console.log(path);
             link.innerHTML = "Войти";
-            if (path == '/index.html') {
+            if (path == 'site-frontend/index.html') {
                 link.href = "pages/auth.html";
             }
             else {
