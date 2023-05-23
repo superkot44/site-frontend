@@ -74,3 +74,15 @@
 .menu-color .test-button:hover {
     background-color: #cc6a29;
 }
+
+.custom-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
