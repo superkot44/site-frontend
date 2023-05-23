@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const url = new URL(window.location.href);
     const path = url.pathname;
 
-    if (path.endsWith('/index.html')) {
+    if (path.endsWith('site-frontend/index.html')) {
         var accountLink = document.querySelectorAll('[href="pages/auth.html"]');
     } else {
         var accountLink = document.querySelectorAll('[href="auth.html"]');
@@ -20,13 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
     accountLink.forEach(function(link) {
         if (isLoggedIn == 'true') {
             link.innerHTML = "Кабинет";
-            if (path == '/index.html') {
+            if (path == 'site-frontend/index.html') {
                 link.href = "pages/account.html";
             }
             else {
                 link.href = "account.html";
             }
         } else {
+            console.log(path);
             link.innerHTML = "Войти";
             if (path == '/index.html') {
                 link.href = "pages/auth.html";
