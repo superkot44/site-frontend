@@ -114,7 +114,7 @@ function showNotification(message) {
 
 function sendFeedback() {
     
-    showNotification('Да, это сработало')
+    showNotification('Спасибо!')
     
     // Отправка результатов на сервер
     const resultData = {
