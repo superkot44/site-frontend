@@ -86,7 +86,36 @@ function showSuccess(input) {
     }
 }
 
+function showNotification(message) {
+    var notification = document.createElement('div');
+    notification.classList.add('custom-notification');
+    notification.textContent = message;
+    document.body.appendChild(notification);
+
+    // Переменная для хранения высоты предыдущих уведомлений
+    var previousNotificationsHeight = 0;
+
+    // Получение высоты предыдущих уведомлений
+    var previousNotifications = document.getElementsByClassName('custom-notification');
+    for (var i = 0; i < previousNotifications.length; i++) {
+          previousNotificationsHeight += previousNotifications[i].offsetHeight + 7;
+    }
+
+    // Позиционирование нового уведомления
+    notification.style.bottom = previousNotificationsHeight + 'px';
+
+    setTimeout(function() {
+          notification.style.opacity = '0';
+          setTimeout(function() {
+            document.body.removeChild(notification);
+          }, 1000);
+    }, 5000);
+}
+
 function sendFeedback() {
+    
+    showNotification('Да, это сработало')
+    
     // Отправка результатов на сервер
     const resultData = {
         firstName: firstNameValue,
