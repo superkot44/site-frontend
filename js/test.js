@@ -779,15 +779,15 @@ function handleEndGame() {
 
     if (playerScore <= 3) {
         remark = "Плохие оценки, продолжай практиковаться."
-        remarkColor = "red"
+        remarkColor = "white"
     }
     else if (playerScore >= 4 && playerScore < 7) {
         remark = "Средние оценки, ты можешь добиться большего."
-        remarkColor = "orange"
+        remarkColor = "white"
     }
     else if (playerScore >= 7) {
         remark = "Отлично, продолжайте в том же духе."
-        remarkColor = "green"
+        remarkColor = "white"
     }
     const playerGrade = (playerScore / 10) * 100
 
